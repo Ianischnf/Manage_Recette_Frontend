@@ -31,33 +31,6 @@ input {
     padding: 5px;
 }
 
-button {
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.btn_login {
-    background-color: rgb(22, 22, 22);
-    border: none;
-}
-.btn_login:hover {
-    background-color: rgb(46, 46, 46);
-    border: none;
-}
-
-
-.btn_register {
-    background-color: #ffff;
-    color: black;
-    border: 0.5px solid black;
-}
-.btn_register:hover {
-    background-color: rgb(22, 22, 22);
-    color: #fff;
-}
-
 
 .title {
     display: flex;

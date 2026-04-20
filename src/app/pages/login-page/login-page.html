@@ -7,9 +7,17 @@
             <input type="text" placeholder="Adresse email...">
             <input type="text" placeholder="Mot de passe...">
 
-            <button class="btn_login">Se connecter</button>
-            <button class="btn_register">S'inscrire</button>
+            <app-button
+                label="Se connecter" 
+                type="submit" 
+                variant="btn_login"
+            ></app-button>
 
+            <app-button
+                label="Créér un compte" 
+                type="submit" 
+                variant="btn_register"
+            ></app-button>
 
             <a href="#">Mot de passe oublié ?</a>
         </form>
