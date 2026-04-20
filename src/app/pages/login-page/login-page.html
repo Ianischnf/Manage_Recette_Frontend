@@ -3,7 +3,7 @@
         <div class="title">
             <h1>Connexion</h1>
         </div>
-        <form action="">
+        <form (submit)="$event.preventDefault()">
             <input type="text" placeholder="Adresse email...">
             <input type="text" placeholder="Mot de passe...">
 
@@ -15,8 +15,9 @@
 
             <app-button
                 label="Créér un compte" 
-                type="submit" 
+                type="button" 
                 variant="btn_register"
+                link="/register"
             ></app-button>
 
             <a href="#">Mot de passe oublié ?</a>
