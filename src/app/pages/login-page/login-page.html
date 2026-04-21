@@ -4,8 +4,18 @@
             <h1>Connexion</h1>
         </div>
         <form (submit)="$event.preventDefault()">
-            <input type="text" placeholder="Adresse email...">
-            <input type="text" placeholder="Mot de passe...">
+
+            <app-input-component
+                type="email"
+                input="input"
+                placeholder = "Adresse email"
+            ></app-input-component>
+
+            <app-input-component
+                type="password"
+                input="input"
+                placeholder = "Mot de passe"
+            ></app-input-component>
 
             <app-button
                 label="Se connecter" 
