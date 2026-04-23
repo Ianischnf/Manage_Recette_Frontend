@@ -1,5 +1,5 @@
 <div class="register_page_layout">
-    <div class="container_register">
+    <form class="container_register" [formGroup]="RegisterForm" (ngSubmit)="onCreateUser()">
         <div class="title">
             <h1>Inscription</h1>
         </div>
@@ -7,30 +7,34 @@
             type="text"
             input="input"
             placeholder="Nom"
+            formControlName="firstName"
         ></app-input-component>
 
         <app-input-component
             type="text"
             input="input"
             placeholder="Prénom"
+            formControlName="lastName"
         ></app-input-component>
 
         <app-input-component
             type="email"
             input="input"
             placeholder="Adresse email"
+            formControlName="email"
         ></app-input-component>
 
         <app-input-component
             type="password"
             input="input"
             placeholder="Mot de passe"
+            formControlName="password"
         ></app-input-component>
 
         <app-button
-            type="button"
+            type="submit"
             label="Créer mon compte"
             variant="btn_register"
         ></app-button>
-    </div>
+    </form>
 </div>
