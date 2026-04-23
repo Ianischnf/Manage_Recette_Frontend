@@ -7,7 +7,7 @@
 }
 
 .container_register {
-    height: 60%;
+    height: 50%;
     width: 25%;
     background-color: #DEF5E5;
     border-radius: 5px;
@@ -15,7 +15,7 @@
     padding: 25px;
     display: flex;
     flex-direction: column;
-    gap: 10%;
+    gap: 5%;
 }
 
 .title{

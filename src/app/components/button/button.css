@@ -1,28 +1,14 @@
-
 button {
     color: #fff;
-    border-radius: 5px;
+    border-radius: 100px;
     cursor: pointer;
     padding: 5px;
     width: 100%;
-}
-
-.btn_login {
-    background-color: rgb(22, 22, 22);
     border: none;
-}
-.btn_login:hover {
-    background-color: rgb(46, 46, 46);
-    border: none;
-}
-
-
-.btn_register {
-    background-color: #ffff;
-    color: black;
-    border: 0.5px solid black;
-}
-.btn_register:hover {
-    background-color: rgb(22, 22, 22);
+    background-color: #215B63;
     color: #fff;
+}
+
+button:hover {
+    background-color: #7DA78C;
 }
