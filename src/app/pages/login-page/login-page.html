@@ -3,18 +3,21 @@
         <div class="title">
             <h1>Connexion</h1>
         </div>
-        <form (submit)="$event.preventDefault()">
+        <form [formGroup]="LoginForm" (ngSubmit)="onLogin()">
 
             <app-input-component
                 type="email"
                 input="input"
                 placeholder = "Adresse email"
+                formControlName = "email"
             ></app-input-component>
 
             <app-input-component
                 type="password"
                 input="input"
                 placeholder = "Mot de passe"
+                
+                formControlName = "password"
             ></app-input-component>
 
             <app-button

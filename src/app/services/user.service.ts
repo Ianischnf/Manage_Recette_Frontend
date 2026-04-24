@@ -17,6 +17,15 @@ export interface UserResponse {
     password: string;
 }
 
+export interface LoginRequest {
+    email : string;
+    password: string;
+}
+
+export interface LoginResponse {
+    token: string;
+}
+
 export interface User {
 
 }
@@ -29,5 +38,9 @@ export class UserService {
 
     createUser(data : UserRequest): Observable<any> {
         return this.http.post(`${this.baseUrl}`, data);
+    }
+
+    Login(data: LoginRequest): Observable<LoginResponse> {
+        return this.http.post<LoginResponse>(`${this.baseUrl}/auth/login`, data);
     }
 }
