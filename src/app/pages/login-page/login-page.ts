@@ -4,6 +4,7 @@ import { RouterLink } from "@angular/router";
 import { InputComponent } from '../../components/input-component/input-component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginRequest, UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -21,7 +22,9 @@ export class LoginPage {
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
-  constructor(private userService : UserService) {}
+  constructor(
+    private userService : UserService,
+    private router      : Router) {}
 
   
 
@@ -32,6 +35,8 @@ export class LoginPage {
   this.userService.Login(login).subscribe({
     next: (res) => {
       console.log("Connexion réussi", res);
+      this.userService.setToken(res.token);
+      this.router.navigate(["/home"]);
     },
 
     error: (err) => {

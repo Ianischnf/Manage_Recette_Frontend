@@ -26,15 +26,19 @@ export interface LoginResponse {
     token: string;
 }
 
-export interface User {
 
-}
 
 @Injectable({providedIn: 'root'})
 export class UserService {
     private baseUrl = ("http://localhost:8085");
+    private readonly TOKEN_KEY = 'token';
 
     constructor(private http: HttpClient) {}
+
+    //Enregistre token
+    setToken(token: string): void{
+        localStorage.setItem(this.TOKEN_KEY, token)
+    }
 
     createUser(data : UserRequest): Observable<any> {
         return this.http.post(`${this.baseUrl}`, data);
@@ -43,4 +47,6 @@ export class UserService {
     Login(data: LoginRequest): Observable<LoginResponse> {
         return this.http.post<LoginResponse>(`${this.baseUrl}/auth/login`, data);
     }
+
+
 }
