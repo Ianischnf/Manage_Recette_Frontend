@@ -1,0 +1,18 @@
+.container_navbar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+.navbar{
+    background-color: #96C9DC;
+    width: 50%;
+    height: 60%;
+    border-radius: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.navbar div {
+    cursor: pointer;
+}

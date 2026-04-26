@@ -1,0 +1,30 @@
+.layout_shopping_page{
+    background-color: #61A0AF;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_shopping_page {
+    flex: 1;
+    /* background-color: red; */
+}
+.container_create_ingredient{
+   background-color: #96C9DC;
+   height: 20%;
+   width: 30%;
+   border-radius: 8px;
+   box-shadow: 2px 2px 2px #3a525a;
+   /* padding: 0 20px 0 20px; */
+   display: flex;
+   justify-content: center;
+   gap: 50px;
+}
+
+.container_create_ingredient_left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top:30px;
+    width: 50%;
+}
