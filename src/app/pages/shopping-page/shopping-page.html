@@ -1,11 +1,11 @@
 <div class="layout_shopping_page">
     <app-navbar-component></app-navbar-component>
     <div class="container_shopping_page">
-        <form class="container_create_ingredient">
-            <div class="container_create_ingredient_left">
-                <app-input-component type="text" placeholder="Ajouter un produit..."></app-input-component>
+        <div class="container_create_ingredient">
+            <form class="container_create_ingredient_left" [formGroup]="IngredientForm" (ngSubmit)="onCreateIngredient()">
+                <app-input-component type="text" placeholder="Ajouter un produit..." formControlName="name" ></app-input-component>
                 <app-button type="submit" label="Ajouter"></app-button>
-            </div>
+            </form>
             <div class="container_create_ingredient_right">
                 <div class="container_list_ingredients">
                     <mat-list role="list">
@@ -16,6 +16,6 @@
 
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
