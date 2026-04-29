@@ -1,5 +1,5 @@
 .layout_shopping_page{
-    background-color: #61A0AF;
+    background-color: #F6F0D7;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
     /* background-color: red; */
 }
 .container_create_ingredient{
-   background-color: #96C9DC;
+   background-color: #C5D89D;
    height: 20%;
    width: 30%;
    border-radius: 8px;

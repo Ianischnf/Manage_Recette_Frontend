@@ -3,7 +3,7 @@
     <div class="container_shopping_page">
         <div class="container_create_ingredient">
             <form class="container_create_ingredient_left" [formGroup]="IngredientForm" (ngSubmit)="onCreateIngredient()">
-                <app-input-component type="text" placeholder="Ajouter un produit..." formControlName="name" ></app-input-component>
+                <app-input-component type="text" placeholder="Ajouter un produit..." formControlName="Name" ></app-input-component>
                 <app-button type="submit" label="Ajouter"></app-button>
             </form>
             <div class="container_create_ingredient_right">

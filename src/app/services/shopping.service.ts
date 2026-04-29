@@ -3,11 +3,11 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
 export interface IngredientRequest {
-    name : String;
+    Name : String;
 }
 
 export interface IngredientResponse {
-    name : String;
+    Name : String;
 }
 
 @Injectable({providedIn: 'root'})
@@ -18,5 +18,9 @@ export class ShoppingService {
 
     createIngredient(data : IngredientRequest) : Observable<IngredientResponse> {
         return this.http.post<IngredientResponse>(`${this.baseUrl}`, data);
+    }
+
+    fetchAllIngredient(): Observable<IngredientResponse[]> {
+        return this.http.get<IngredientResponse[]>(`${this.baseUrl}`);
     }
 }

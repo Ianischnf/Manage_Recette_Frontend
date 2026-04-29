@@ -5,10 +5,10 @@ button {
     padding: 5px;
     width: 100%;
     border: none;
-    background-color: #F06C9B;
+    background-color: #89986D;
     color: #fff;
 }
 
 button:hover {
-    background-color: #eb5c8e;
+    background-color: #9CAB84;
 }
