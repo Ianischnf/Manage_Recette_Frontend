@@ -7,6 +7,7 @@ export interface IngredientRequest {
 }
 
 export interface IngredientResponse {
+    IngredientId : String;
     Name : String;
 }
 

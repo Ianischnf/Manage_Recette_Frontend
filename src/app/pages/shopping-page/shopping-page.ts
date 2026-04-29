@@ -6,6 +6,7 @@ import { MatListModule } from '@angular/material/list';
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { IngredientRequest, IngredientResponse, ShoppingService } from '../../services/shopping.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-shopping-page',
@@ -14,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './shopping-page.css',
 })
 
-@Injectable({ providedIn: 'root' })
+
 export class ShoppingPage implements OnInit {
 
   ngOnInit(): void {
@@ -30,7 +31,9 @@ export class ShoppingPage implements OnInit {
     Name: ['', Validators.required]
   })
 
-  constructor(private shoppingService: ShoppingService) { }
+  constructor(private shoppingService: ShoppingService,
+              private cdr : ChangeDetectorRef
+  ) { }
 
 
 
@@ -53,7 +56,8 @@ export class ShoppingPage implements OnInit {
     return this.shoppingService.fetchAllIngredient().subscribe({
       next: (res) => {
         console.log("Liste des ingrédients : ", res);
-        this.Ingredients = res;
+        this.Ingredients = [...res];
+        this.cdr.detectChanges();
       },
       error: (res) => {
         console.log("Erreur lors de la récupération des ingrédients");

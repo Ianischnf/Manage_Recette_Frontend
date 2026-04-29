@@ -2,18 +2,25 @@
     <app-navbar-component></app-navbar-component>
     <div class="container_shopping_page">
         <div class="container_create_ingredient">
+            <div class="title">
+                <h1>Ajouter un ingrédient</h1>
+            </div>
             <form class="container_create_ingredient_left" [formGroup]="IngredientForm" (ngSubmit)="onCreateIngredient()">
-                <app-input-component type="text" placeholder="Ajouter un produit..." formControlName="Name" ></app-input-component>
-                <app-button type="submit" label="Ajouter"></app-button>
+                <div class="form_left">
+                    <app-input-component type="text" placeholder="Ajouter un produit..." formControlName="Name" ></app-input-component>
+                </div>
+                <div class="form_right">
+                    <app-button type="submit" label="Ajouter" class="btn_ajout_ingredient"></app-button>
+                </div>
             </form>
             <div class="container_create_ingredient_right">
                 <div class="container_list_ingredients">
                     <mat-list role="list">
-                        <mat-list-item role="listitem">Item 1</mat-list-item>
-                        <mat-list-item role="listitem">Item 2</mat-list-item>
-                        <mat-list-item role="listitem">Item 3</mat-list-item>
+                        @for (ingredient of Ingredients; track $index) {
+                            <mat-list-item role="listitem">{{ ingredient.Name }}</mat-list-item>
+                           
+                        }
                     </mat-list>
-
                 </div>
             </div>
         </div>
