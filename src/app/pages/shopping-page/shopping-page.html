@@ -1,45 +1,56 @@
 <div class="layout_shopping_page">
     <app-navbar-component></app-navbar-component>
     <div class="container_shopping_page">
-        <div class="container_ingredient_list">
-            <div class="title">
-                <h1>Créer des produits</h1>
+        <div class="container_forms">
+            <div class="container_ingredient_list">
+                <div class="title">
+                    <h2>Créer des produits</h2>
+                </div>
+                <form class="container_form_create_ingredient_list" [formGroup]="IngredientForm"
+                    (ngSubmit)="onCreateIngredient()">
+                    <div class="form_top">
+                        <app-input-component type="text" placeholder="Ajouter un produit..." formControlName="Name"
+                            class="input"></app-input-component>
+                    </div>
+                    <div class="form_bottom">
+                        <app-button type="submit" label="Ajouter" class="btn_ajout_ingredient"></app-button>
+                    </div>
+                </form>
             </div>
-            <form class="container_form_create_ingredient_list" [formGroup]="IngredientForm"
-                (ngSubmit)="onCreateIngredient()">
-                <div class="form_top">
-                    <app-input-component type="text" placeholder="Ajouter un produit..." formControlName="Name"
-                        class="input"></app-input-component>
+
+
+            <div class="container_list_ingredients">
+                <div class="title">
+                    <h2>Produits crées</h2>
                 </div>
-                <div class="form_bottom">
-                    <app-button type="submit" label="Ajouter" class="btn_ajout_ingredient"></app-button>
-                </div>
-            </form>
-        </div>
+                <mat-list role="list">
+                    @for (ingredient of Ingredients; track $index) {
+                    <mat-list-item role="listitem">{{ ingredient.Name }}</mat-list-item>
 
-
-        <div class="container_list_ingredients">
-            <mat-list role="list">
-                @for (ingredient of Ingredients; track $index) {
-                <mat-list-item role="listitem">{{ ingredient.Name }}</mat-list-item>
-
-                }
-            </mat-list>
-        </div>
-
-        <div class="container_create_shoppingList">
-            <form action="" class="container_form_create_shoppingList" [formGroup]="ShoppingListForm">
-                <label for="">Séléctionner un ingrédient à ajouter dans la recette</label>
-                <select formControlName="ingredientId">
-                    @for (ingredient of Ingredients; track ingredient.IngredientId) {
-                    <option [value]="ingredient.IngredientId">
-                        {{ ingredient.Name }}
-                    </option>
                     }
-                </select>
-                <app-input-component type="text" placeholder="Précisez la quantité"></app-input-component>
-                <app-input-component type="text" placeholder="Précisez l'unité"></app-input-component>
-            </form>
+                </mat-list>
+            </div>
+
+            <div class="container_create_shoppingList">
+                <div class="title">
+                    <h2>Créer ma liste de course</h2>
+                </div>
+                <form action="" class="container_form_create_shoppingList" [formGroup]="ShoppingListForm">
+                    <label for="">Séléctionner un ingrédient à ajouter dans la recette</label>
+                    <select formControlName="ingredientId">
+                        @for (ingredient of Ingredients; track ingredient.IngredientId) {
+                        <option [value]="ingredient.IngredientId">
+                            {{ ingredient.Name }}
+                        </option>
+                        }
+                    </select>
+                    <app-input-component type="text" placeholder="Précisez la quantité"></app-input-component>
+                    <app-input-component type="text" placeholder="Précisez l'unité"></app-input-component>
+
+                    <app-button type="submit" label="Créer"></app-button>
+                </form>
+            </div>
         </div>
     </div>
+
 </div>
